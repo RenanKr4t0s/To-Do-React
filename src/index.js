@@ -1,17 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import App from './components/App';
+;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
     <App />
-  </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+//DESAFIO: Faça esta aplicação funcionar aplicando o que você aprendeu.
+//1. Quando um novo texto é escrito na entrada, seu estado deve ser salvo.
+//2. Quando o botão adicionar é pressionado, os dados atuais na entrada devem ser
+//adicionado a um array.
+//3. O <ul> deve exibir todos os itens do array como <li>s
