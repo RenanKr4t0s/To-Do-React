@@ -33,7 +33,6 @@ function deleteItem(id, safe){
         return index !== id
       })
     })
-    console.log("Nada")
   }
 }
 
