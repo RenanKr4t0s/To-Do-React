@@ -14,17 +14,29 @@ function saveInput(){
   setFullList(oldList => [...oldList, input])
   setInput("")
 }
+function showInput(content){
+  setInput(content)
+}
 
-function deleteItem(id){
-  window.confirm("Quer mesmo apagar o item?")?(
+function deleteItem(id, safe){
+  if (safe){
+    window.confirm("Quer mesmo apagar o item?")?(
+      setFullList((oldList)=>{
+        return oldList.filter((e, index)=>{
+          return index !== id
+        })
+      })
+    ) : window.alert("To-Do Não Deletado")
+  } else{
     setFullList((oldList)=>{
       return oldList.filter((e, index)=>{
         return index !== id
       })
     })
-  ) : window.alert("To-Do Não Deletado")
-
+    console.log("Nada")
+  }
 }
+
 
   return (
     <div className="container">
@@ -37,7 +49,7 @@ function deleteItem(id){
         saveInput = {saveInput}
        />
       <div>
-        < ListCreator toDelete={deleteItem} array={fullList} />
+        < ListCreator toDelete={deleteItem} array={fullList} showInput={showInput} />
       </div>
     </div>
   );

@@ -71,11 +71,18 @@ button span {
   border-radius: 5px;
   border: 2px solid hsl(198, 1%, 29%);
 }
-
-li {
-  text-align: left;
+.item__lister{
   position: relative;
-  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.item__lister button{
+  background-color: #ffeaa7;
+  font-family: "Architects Daughter", cursive;
+  border-radius: 5px;
+  padding: 0.2rem 0.5rem;
+  box-shadow: 1px 2px #fdcb6e;
+  
 }
 
 li:hover{

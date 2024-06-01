@@ -9,15 +9,22 @@ export default function LiElement(props){
             return !prevValue
         })
     }
-    return <div>
-                <li 
+
+    function editContent(e){
+        let content = e.target.previousSibling.textContent
+        props.showInput(content);
+        props.toDelete(props.id, false)
+
+    }
+    return <li className="item__lister">
+                <span 
                     onClick={doneTask}
-                    onDoubleClick={()=>{props.toDelete(props.id)}} 
+                    onDoubleClick={()=>{props.toDelete(props.id, true)}} 
                     style={{textDecoration: doneStyle ? "line-through":'none'}} 
                     id={props.id} >
                     {props.element}
-                </li>
-                <button>Botãozinho</button>
-            </div>
+                </span>
+                <button onClick={editContent}>Edit</button>
+            </li>
 }
 
